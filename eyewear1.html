@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Vision - Eyewear Shop</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #222;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 22px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+            background-color: #333;
+            margin: 0;
+            padding: 10px;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .products {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .product {
+            border: 2px solid #ddd;
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            border-radius: 10px;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+        }
+
+        .product img {
+            width: 100%;
+            border-radius: 10px;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        /* WhatsApp Floating Button */
+        #whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            padding: 10px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+        #whatsapp-button img {
+            width: 50px;
+            height: 50px;
+        }
+
+        /* WhatsApp Chat Popup */
+        #whatsapp-chat {
+            display: none;
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            background: white;
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #222;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>MY VISION - Eyewear Shop</header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#" onclick="openWhatsAppChat()">WhatsApp</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="container">
+        <h2>Welcome to My Vision - The Best Eyewear Shop</h2>
+        <p>Explore our premium collection of sunglasses and reading glasses.</p>
+    </section>
+
+    <section id="shop" class="container">
+        <h2>Our Products</h2>
+
+        <h3>Sunglasses Collection</h3>
+        <div class="products">
+            <div class="product">
+                <img src="https://your-image-host.com/rayban.jpg" alt="Ray-Ban Sunglasses">
+                <h3>Ray-Ban Sunglasses</h3>
+                <p>Price: Rs. 3500</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://your-image-host.com/oakley.jpg" alt="Oakley Sunglasses">
+                <h3>Oakley Sunglasses</h3>
+                <p>Price: Rs. 4000</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://your-image-host.com/fastrack.jpg" alt="Fastrack Sunglasses">
+                <h3>Fastrack Sunglasses</h3>
+                <p>Price: Rs. 2500</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+
+        <h3>Reading Glasses Collection</h3>
+        <div class="products">
+            <div class="product">
+                <img src="https://your-image-host.com/reading1.jpg" alt="Classic Reading Glasses">
+                <h3>Classic Reading Glasses</h3>
+                <p>Price: Rs. 800</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://your-image-host.com/reading2.jpg" alt="Modern Reading Glasses">
+                <h3>Modern Reading Glasses</h3>
+                <p>Price: Rs. 900</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp Button -->
+    <div id="whatsapp-button">
+        <a href="javascript:void(0)" onclick="openWhatsAppChat()">
+            <img src="https://your-image-host.com/whatsapp-icon.png" alt="WhatsApp">
+        </a>
+    </div>
+
+    <!-- WhatsApp Chat Popup -->
+    <div id="whatsapp-chat">
+        <p>Chat with us on WhatsApp:</p>
+        <a href="https://wa.me/7011830998" target="_blank">
+            <button>Open WhatsApp</button>
+        </a>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 MyVision. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function openWhatsAppChat() {
+            document.getElementById('whatsapp-chat').style.display = 'block';
+        }
+
+        setTimeout(openWhatsAppChat, 2000);
+    </script>
+</body>
+</html>
